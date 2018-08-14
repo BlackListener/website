@@ -1,0 +1,38 @@
+{
+  "name": "blacklistener",
+  "version": "1.0.0",
+  "description": "Global Banning System for Discord.",
+  "main": "index.js",
+  "dependencies": {
+    "dblapi.js": "^2.1.0",
+    "discord.js": "^11.3.2",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "fast-levenshtein": "^2.0.6",
+    "form-data": "^2.3.2",
+    "json5": "^1.0.1",
+    "mkdirp-promise": "^5.0.1",
+    "node-fetch": "^2.1.2",
+    "performance-now": "^2.1.0",
+    "random-puppy": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "string-format": "^2.0.0",
+    "unzip": "^0.1.11"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.1"
+  },
+  "scripts": {
+    "test": "node index.js --travis-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rht0910/BlackListener.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rht0910/BlackListener/issues"
+  },
+  "homepage": "https://github.com/rht0910/BlackListener#readme"
+}
