@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>BlackListener</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <script type="text/application">
+    document.getElementById("find").onclick = function() {
+      fetch("https://compute.blacklistener.tk/data/users/" + document.getElementById("user_id").textContent + "/config.json")
+        .then(function(response) {
+          const json = response.json();
+          document.getElementById("username").textContent = json.username
+        })
+    }
+  </script>
+  <nav class="gray lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">BlackListener</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">ログイン</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">ログイン</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">データ照会</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">BlackListenerボットの<a href="https://go.blacklistener.tk/go/commands/lookup">lookupコマンド</a>とほとんど同じ動きをします。</h5>
+      </div>
+      <div class="row center">
+        <input type="text" id="user_id" placeholder="ユーザーID" />
+        <button id="find" class="btn-large waves-effect waves-light orange">検索</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <table>
+            <tbody>
+              <tr>
+                <td>ユーザーネーム</td>
+                <td id="username"></td>
+              </tr>
+              <tr>
+                <td>アカウント作成</td>
+                <td id="createdAt"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">簡単な情報照会</h5>
+
+            <p class="light">誰でも簡単に、ユーザーのBAN情報などを見れるようにしよう(未来系)。</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">サーバー設定を可視化</h5>
+
+            <p class="light">あのテキストベースではなくもっとわかりやすいもので表されます。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">BlackListenerの機能は？</h5>
+          <p class="grey-text text-lighten-4">アンチスパム(休止中)、グローバルBAN、メッセージ削除(数で指定)、その他の機能も。</p>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"><i class="material-icons">link</i>リンク</h5>
+          <ul>
+            <li><a class="white-text" href="http://docs.blacklistener.tk/">説明書(ReadTheDocs)</a></li>
+            <li><a class="white-text" href="https://discordapp.com/oauth2/authorize?client_id=456966161079205899&permissions=8&scope=bot">招待</a></li>
+            <li><a class="white-text" href="https://github.com/BlackListener/BlackListener">GitHub</a></li>
+            <li><a class="white-text" href="https://bugs.rht0910.tk/projects/BL/issues/?filter=allopenissues">バグトラッカー</a></li>
+            <li><a class="white-text" href="https://discordapp.com">Discord</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"><i class="material-icons">settings</i>設定</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="https://github.com/rht0910">rht0910</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/js/materialize.js"></script>
+  <script src="/js/init.js"></script>
+
+  </body>
+</html>

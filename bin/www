@@ -7,6 +7,8 @@
 var app = require('../app');
 var debug = require('debug')('website:server');
 var http = require('http');
+var morgan = require('morgan');
+var logger = require('../logger').getLogger('website:server', 'yellow');
 
 /**
  * Get port from environment and store in Express.
@@ -25,6 +27,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
+app.use(morgan('combined'))
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
@@ -65,11 +68,11 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      logger.error(bind + ' requires elevated privileges');
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      logger.error(bind + ' is already in use');
       process.exit(1);
       break;
     default:
@@ -86,5 +89,6 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
+  logger.info('Listening on ' + bind);
   debug('Listening on ' + bind);
 }
